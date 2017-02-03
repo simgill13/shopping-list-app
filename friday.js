@@ -1,18 +1,16 @@
 var appState = {
     items: [
-      { entry: 'apples', status: true, currentlyEditing: false },
-      { entry: 'oranges', status: false }
+      { entry: 'apples', status: true},
+      { entry: 'oranges', status: false}
     ]
 };
 
-var addItem = function(appState, item, number) {
+var addItem = function(appState, item) {
     appState.items.push({ entry: item, status: false});
 };
-
 var deleteItem = function(appState, position) {
     appState.items.splice(position, 1);
 };
-
 var checkItem = function(appState, position) {
   appState.items[position].status = !appState.items[position].status;
 }
