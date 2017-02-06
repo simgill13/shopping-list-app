@@ -43,8 +43,9 @@ $(function() {
     $('.shopping-list-add').submit(function(event) {
         event.preventDefault();
         addItem(appState, $('.shopping-list-add-input').val());
-        reset();
         renderList(appState, $('.shopping-list'));
+        this.reset();
+
     });
     $('ul').on('click', '.shopping-item-delete', function(event) {
         deleteItem(appState, parseInt(event.currentTarget.id));
@@ -55,7 +56,3 @@ $(function() {
         renderList(appState, $('.shopping-list'));
     });
 });
-// to clear input field
-function reset() {
-  $('.shopping-list-add-input').val("");
-};
